@@ -56,8 +56,6 @@ Taste Drift is an ML-powered media preference analysis project that shows how a 
 
 
 
-```text
-
 Viewing History
 
 &#x20;     ↓
