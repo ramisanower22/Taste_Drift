@@ -1,0 +1,122 @@
+/* ========================================
+   MOVIE ENTRY TRANSITION
+======================================== */
+
+.movie-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #d8d8d5;
+
+  animation: transitionFadeIn 0.25s ease forwards;
+}
+
+.transition-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.transition-clapperboard {
+  width: clamp(150px, 18vw, 230px);
+  height: auto;
+
+  object-fit: contain;
+
+  animation: clapperPop 1.15s cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+.transition-small-text {
+  margin-top: 22px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+
+  letter-spacing: 0.32em;
+
+  color: var(--navy);
+
+  opacity: 0;
+
+  animation: textAppear 0.5s ease 0.45s forwards;
+}
+
+.transition-title {
+  margin-top: 9px;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+
+  color: var(--navy);
+
+  opacity: 0;
+
+  animation: textAppear 0.5s ease 0.58s forwards;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes transitionFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes clapperPop {
+  0% {
+    opacity: 0;
+    transform:
+      scale(0.5)
+      rotate(-8deg);
+  }
+
+  45% {
+    opacity: 1;
+    transform:
+      scale(1.08)
+      rotate(3deg);
+  }
+
+  65% {
+    transform:
+      scale(0.97)
+      rotate(-1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+}
+
+
+@keyframes textAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
